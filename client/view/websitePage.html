@@ -1,9 +1,11 @@
 <template name="website_page">
   {{> navbar}}
+  {{> website_form}}
 
   <div class="container">
     {{> flashMessages}}
-    {{> website_form}}
+
+    {{> add_btn}}
     <div class="row">
       <div class="col-md-9">
         {{>website_item}}

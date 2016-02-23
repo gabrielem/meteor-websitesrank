@@ -56,7 +56,7 @@ Router.route('/q/:q', function () {
 
 
 Accounts.ui.config({
-passwordSignupFields: "USERNAME_AND_EMAIL"
+  passwordSignupFields: "USERNAME_AND_EMAIL"
 });
 
 
@@ -87,6 +87,10 @@ function addTags(tags){
 Template.registerHelper('getParams', function() {
     return Router.current().params;
 });
+Template.registerHelper('isLogin', function() {
+    return Meteor.user();
+});
+
 // {{isRoute "q.:q"}}
 Template.registerHelper('isRoute', function(route) {
 	var rName = Router.current().route.getName();
@@ -297,9 +301,22 @@ Template.up_down_vote.events({
 })
 
 
+Template.add_btn.events({
+  "click .js-toggle-website-form":function(event){
+		//$("#website_form").toggle('slow');
+    $("#website_form_overlay").toggle();
+    $("#website_form").toggle();
+    console.log("show add");
+	}
+});
+
 Template.website_form.events({
-	"click .js-toggle-website-form":function(event){
-		$("#website_form").toggle('slow');
+  "click #website_form_overlay":function(event){
+		//$("#website_form").toggle('slow');
+    $("#website_form").hide();
+    $("#website_form_overlay").fadeOut('slow');
+    console.log("hide add");
+
 	},
 	/*
 		Insert a new website

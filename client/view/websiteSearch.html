@@ -1,9 +1,12 @@
 <template name="website_search">
   {{> navbar}}
+  {{> website_form}}
+  
   <div class="container">
 
     {{> flashMessages}}
-    {{> website_form}} 
+
+    {{> add_btn}}
 
     {{#if websites.count}}
     	{{#each websites}}

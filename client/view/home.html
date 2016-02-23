@@ -1,11 +1,14 @@
 <template name="welcome">
+  {{> website_form}}
+  
   <!-- navbar  - you will be putting the login functions here -->
   {{> navbar}}
 
 	<div class="container">
     {{> flashMessages}}
 
-	  {{> website_form}}
+	  {{> add_btn}}
+
 
     <div class="row">
       <div class="col-md-9">

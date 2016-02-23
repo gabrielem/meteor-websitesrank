@@ -1,5 +1,6 @@
 <template name="comment_form">
   <form class="js-save-website-comment-form">
+    {{#if isLogin}}
     <div class="form-group">
       <textarea class="form-control" id="text" placeholder="Insert your comment here..."></textarea>
     </div>
@@ -7,5 +8,13 @@
       <i class="fa fa-pencil"></i>
       Add your comment
     </button>
+    {{else}}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <span class="glyphicon glyphicon-exclamation-sign"></span>
+        To add a comment you must be logedin.
+      </div>
+    </div>
+    {{/if}}
   </form>
 </template>

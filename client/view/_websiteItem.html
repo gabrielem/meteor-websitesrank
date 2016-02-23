@@ -51,14 +51,14 @@
 
 
       {{#if isRoute "website.:_id"}}
-        <!-- Display comments only if is the page of the single website --> 
+        <!-- Display comments only if is the page of the single website -->
         <br><br>
         {{>comments_list}}
 
         {{#each comments}}
          {{>comment_item}}
         {{/each}}
-        <br>
+        
         {{>comment_form}}
       {{/if}}
 

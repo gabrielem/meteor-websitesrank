@@ -1,0 +1,25 @@
+<template name="add_btn">
+  <div class="container">
+		<div class="row">
+		<div class="col-md-2">
+			{{# if isLogin }}
+			<a class="btn btn-primary js-toggle-website-form" href="#">
+		  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Site
+			</a>
+			{{else}}
+			Login to insert
+			<br>
+			a new website
+			{{/if}}
+		</div>
+			<div class="col-md-10">
+			{{#if isRoute "q.:q"}}
+				<h2 style="display:inline-block;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;">Search Results</h2>
+			{{/if}}
+			</div>
+		</div>
+
+
+		<br><br>
+	</div>
+</template>
