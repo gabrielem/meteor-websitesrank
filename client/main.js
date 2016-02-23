@@ -1,6 +1,9 @@
 Router.configure({
-  layoutTemplate: 'ApplicationLayout'
+  layoutTemplate: 'ApplicationLayout',
+  notFoundTemplate: 'not_found'
 });
+
+//Router.plugin('dataNotFound', {notFoundTemplate: 'not_found'});
 
 Router.route('/', function () {
   this.render('welcome', {

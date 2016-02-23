@@ -8,7 +8,11 @@
     {{> add_btn}}
     <div class="row">
       <div class="col-md-9">
-        {{>website_item}}
+        {{#if title}}
+          {{>website_item}}
+        {{else}}
+          {{>not_found}}
+        {{/if}}
       </div>
       <div class="col-md-3">
         {{> websiteSuggestions}}
