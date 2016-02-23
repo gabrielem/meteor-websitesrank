@@ -1,0 +1,42 @@
+<template name="website_form">
+	<div class="container">
+		<div class="row">
+		<div class="col-md-2">
+			<a class="btn btn-primary js-toggle-website-form" href="#">
+		  		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Site
+			</a>
+		</div>
+			<div class="col-md-10">
+			{{#if isRoute "q.:q"}}
+				<h2 style="display:inline-block;padding:0px 0px 0px 0px;margin:0px 0px 0px 0px;">Search Results</h2>
+			{{/if}}
+			</div>
+		</div>
+
+		<div id="website_form" class="hidden_div">
+	    <div class="panel panel-default">
+	      <div class="panel-body">
+	    		<form class="js-save-website-form">
+	    		  <div class="form-group">
+	    		    <label for="url">Insert the Site address and click on ADD</label>
+	    		    <input type="text" class="form-control" id="url" placeholder="http://www.mysite.com">
+	    		  </div>
+	          <!--
+	    		  <div class="form-group">
+	    		    <label for="title">Title</label>
+	    		    <input type="text" class="form-control" id="title" placeholder="Mysite">
+	    		  </div>
+	    		  <div class="form-group">
+	    		    <label for="description">Description</label>
+	    		    <input type="text" class="form-control" id="description" placeholder="I found this site really useful for ...">
+	    		  </div>
+	          -->
+
+	    		  <button type="submit" class="btn btn-default js-save-website-form">ADD</button>
+	    		</form>
+	      </div>
+	    </div>
+		</div>
+		<br><br>
+	</div>
+</template>

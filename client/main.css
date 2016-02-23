@@ -1,0 +1,17 @@
+/* CSS declarations go here */
+.hidden_div{
+	display:none;
+}
+
+.alert{
+	position: absolute;
+	top: 55px;
+	left:0px;
+	width: 100%;
+
+	z-index: 9999;
+}
+
+.navbar-brand{
+	padding: 0px;
+}

@@ -1,0 +1,11 @@
+<template name="comment_item">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <span class="fa fa-user "></span> {{getUser createdBy}}
+      <span class="glyphicon glyphicon-calendar "></span> {{createdOn}}
+      <p>
+        {{text}}
+      </p>
+    </div>
+  </div>
+</template>

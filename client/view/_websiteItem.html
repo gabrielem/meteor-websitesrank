@@ -1,0 +1,68 @@
+<template name="website_item">
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="btn {{setRatingBgClass rating}}"><b class="lead">{{rating}}</b><br>rating
+              {{>up_down_vote}}
+          </div>
+
+        </div>
+        <div class="col-md-10">
+
+          <h4>
+            <a href="/website/{{_id}}">
+              {{title}}
+            </a>
+            <a href="{{url}}" target="_blank">
+              <i class="fa fa-paper-plane" target="_blank" title="Go to {{url}}"></i>
+            </a>
+          </h4>
+
+          <div>
+            <div class="btn bg-info">
+              <small>this website has recived</small>
+              <span class="label label-success">{{up}}</span>
+              <i class="fa fa-thumbs-up"></i>
+              <small>and</small>
+              <span class="label label-warning">{{down}}</span>
+              <i class="fa fa-thumbs-down"></i>
+            </div>
+
+
+        </div>
+
+        	<p style="max-height:90px;overflow:auto;">
+        		{{description}}
+        	</p>
+          {{#if isRoute "website.:_id"}}
+            <a href="/" class="btn btn-default"><span class="fa fa-home fa-fw"></span>back to home</a>
+          {{else}}
+            <a href="/website/{{_id}}" class="btn btn-default"><span class="fa fa-book fa-fw"></span>read more</a>
+          {{/if}}
+          <small>
+            Website added by: <b>{{getUser createdBy}}</b>
+            on {{createdOn}}
+          </small>
+        	<!-- you will be putting your up and down vote buttons in here! -->
+        </div>
+      </div>
+
+
+      {{#if isRoute "website.:_id"}}
+        <!-- Display comments only if is the page of the single website --> 
+        <br><br>
+        {{>comments_list}}
+
+        {{#each comments}}
+         {{>comment_item}}
+        {{/each}}
+        <br>
+        {{>comment_form}}
+      {{/if}}
+
+
+    </div>
+  </div>
+</template>

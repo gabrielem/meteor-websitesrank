@@ -1,0 +1,39 @@
+<template name="websiteSuggestions">
+
+  <h4>Websites Suggestions</h4>
+
+    Website from other user you may be found interesting:
+
+
+  <!-- user_id: {{user}} -->
+
+  {{#if websites}}
+    {{#each websites}}
+    <ul class="nav nav-pills nav-stacked">
+      <li>
+        <a href="/website/{{_id}}">
+          {{title}}
+        </a>
+      </li>
+    </ul>
+  	{{/each}}
+
+    {{#if tags}}
+    <div>
+      <h5>Based on your tags cloud</h5>
+      Tags are collected automatically from your preferences.
+    </div>
+      {{#each tags.tags}}
+      <a href="/q/{{this}}#top" class="btn btn-success btn-xs" style="margin:3px;">
+        {{this}}
+      </a>
+    	{{/each}}
+    {{/if}}
+  {{else}}
+  <div class="well well-sm bg-info">
+    <span class="glyphicon glyphicon-flash"></span>
+    To get Website suggestions add some new website or vote up some already in the archive.
+  </div>
+  {{/if}}
+
+</template>

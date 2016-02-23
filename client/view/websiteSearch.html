@@ -1,0 +1,21 @@
+<template name="website_search">
+  {{> navbar}}
+  <div class="container">
+
+    {{> flashMessages}}
+    {{> website_form}} 
+
+    {{#if websites.count}}
+    	{{#each websites}}
+    	{{>website_item}}
+    	{{/each}}
+    {{else}}
+      <div class="text-center">
+        no website found for this keyword
+        <br>
+        <a href="/">Back to home</a>
+      </div>
+    {{/if}}
+
+  </div>
+</template>
